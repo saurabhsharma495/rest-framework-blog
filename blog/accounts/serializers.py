@@ -38,7 +38,6 @@ class LoginSerializer(serializers.Serializer):
 
     def get_token(self, data):
         user = authenticate(username=data['username'], password=data['password'])
-        print("user:", user)
         if not user:
             return {'message': 'invalid credentials', 'data': {}}
         
